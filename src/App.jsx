@@ -42,9 +42,43 @@ const EXPERIENCE = [
 ];
 
 const SKILLS = ["Java", "JavaScript", "Python", "Swift"];
+const TOOLS = ["Git", "Xcode", "ARKit", "SwiftUI", "TestCafe", "SoapUI"];
+
+const HERO_SPECS = [
+  ["Status", "Open to work"],
+  ["Role", "Developer"],
+  ["Focus", "iOS · Web · QA"],
+  ["Based", "Charlotte, NC"],
+];
+
+const ABOUT_SPECS = [
+  ["Education", "B.S. Information Systems Technology — Miami Dade College (2023)"],
+  ["Coursework", "CS50x (Python) · iPhone App Dev (Swift) · CompTIA A+"],
+  ["Languages", "English (Advanced) · Spanish (Native)"],
+];
 
 const GITHUB_URL = "https://github.com/cristian-martin";
 const EMAIL = "cristian.msf23@gmail.com";
+
+function SpecCard({ title, items }) {
+  return (
+    <div className="border border-black divide-y divide-gray-200">
+      {title && (
+        <div className="px-5 py-3 text-xs uppercase tracking-widest bg-black text-white">
+          {title}
+        </div>
+      )}
+      {items.map(([k, v]) => (
+        <div key={k} className="px-5 py-4">
+          <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1.5">
+            {k}
+          </p>
+          <p className="text-sm leading-snug">{v}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -65,9 +99,7 @@ export default function App() {
         }`}
       >
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-          <span className="font-bold text-lg tracking-widest uppercase">
-            CM.
-          </span>
+          <span className="font-bold text-lg tracking-widest uppercase">CM.</span>
           {/* Desktop links */}
           <ul className="hidden md:flex gap-8">
             {NAV_LINKS.map((link) => (
@@ -119,43 +151,45 @@ export default function App() {
       </nav>
 
       {/* Hero */}
-      <section className="min-h-screen flex flex-col justify-center px-6 max-w-5xl mx-auto relative">
-        <p className="text-xs uppercase tracking-widest mb-6 text-gray-500">
-          Available for work · Charlotte, NC
-        </p>
-        <h1 className="text-6xl md:text-8xl font-bold leading-none tracking-tight mb-6">
-          Cristian
-          <br />
-          Martin.
-        </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-lg mb-10">
-          Developer and Information Systems Technology graduate. I build clean,
-          reliable software — from QA automation to web and iOS apps.
-        </p>
-        <div className="flex gap-4 flex-wrap">
-          <a
-            href="#experience"
-            className="px-6 py-3 bg-black text-white text-sm uppercase tracking-widest hover:bg-gray-800 transition-colors"
-          >
-            View Experience
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3 border border-black text-sm uppercase tracking-widest hover:bg-black hover:text-white transition-colors"
-          >
-            Contact Me
-          </a>
-        </div>
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs uppercase tracking-widest text-gray-400">
-          <span>Scroll</span>
-          <div className="w-px h-12 bg-gray-300 animate-pulse" />
+      <section className="min-h-screen flex items-center px-6">
+        <div className="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center py-28">
+          <div>
+            <p className="text-xs uppercase tracking-widest mb-6 text-gray-500">
+              Available for work
+            </p>
+            <h1 className="text-6xl md:text-7xl font-bold leading-none tracking-tight mb-6">
+              Cristian
+              <br />
+              Martin.
+            </h1>
+            <p className="text-lg text-gray-600 max-w-md mb-10">
+              Developer and Information Systems Technology graduate. I build
+              clean, reliable software — from QA automation to web and iOS apps.
+            </p>
+            <div className="flex gap-4 flex-wrap">
+              <a
+                href="#experience"
+                className="px-6 py-3 bg-black text-white text-sm uppercase tracking-widest hover:bg-gray-800 transition-colors"
+              >
+                View Experience
+              </a>
+              <a
+                href="#contact"
+                className="px-6 py-3 border border-black text-sm uppercase tracking-widest hover:bg-black hover:text-white transition-colors"
+              >
+                Contact Me
+              </a>
+            </div>
+          </div>
+          <div className="w-full md:max-w-xs md:justify-self-end">
+            <SpecCard items={HERO_SPECS} />
+          </div>
         </div>
       </section>
 
       {/* About */}
       <section id="about" className="py-24 px-6 border-t border-black">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div>
             <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">
               01 / About
@@ -164,9 +198,9 @@ export default function App() {
             <p className="text-gray-600 leading-relaxed mb-4">
               I'm a developer with a B.S. in Information Systems Technology from
               Miami Dade College (2023). My background spans QA automation,
-              full-stack fundamentals, and mobile development — with
-              hands-on coursework in CS50x (Python) and iPhone app development
-              (Swift).
+              full-stack fundamentals, and mobile development — including a
+              recent internship building augmented-reality experiences with
+              ARKit and SwiftUI.
             </p>
             <p className="text-gray-600 leading-relaxed">
               Self-motivated and detail-oriented, I care about writing clean code
@@ -174,12 +208,8 @@ export default function App() {
               with. Now based in Charlotte, NC.
             </p>
           </div>
-          <div className="border border-black p-1">
-            <div className="bg-gray-100 aspect-square flex items-center justify-center">
-              <span className="text-8xl font-bold text-gray-200 select-none">
-                CM
-              </span>
-            </div>
+          <div className="md:pt-9">
+            <SpecCard title="At a glance" items={ABOUT_SPECS} />
           </div>
         </div>
       </section>
@@ -247,15 +277,35 @@ export default function App() {
             03 / Skills
           </p>
           <h2 className="text-4xl font-bold mb-12">Core Languages</h2>
-          <div className="flex flex-wrap gap-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 border-l border-t border-black">
             {SKILLS.map((skill, i) => (
               <div
-                key={i}
-                className="border border-black px-6 py-4 text-sm uppercase tracking-widest hover:bg-black hover:text-white transition-colors cursor-default -ml-px -mt-px"
+                key={skill}
+                className="border-r border-b border-black px-6 py-10 flex flex-col gap-4 hover:bg-black hover:text-white transition-colors cursor-default group"
               >
-                {skill}
+                <span className="text-xs text-gray-500 group-hover:text-gray-400 tracking-widest">
+                  0{i + 1}
+                </span>
+                <span className="text-2xl md:text-3xl font-bold tracking-tight">
+                  {skill}
+                </span>
               </div>
             ))}
+          </div>
+          <div className="mt-12">
+            <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">
+              Tools &amp; Frameworks
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {TOOLS.map((tool) => (
+                <span
+                  key={tool}
+                  className="text-xs border border-black px-3 py-2 uppercase tracking-widest hover:bg-black hover:text-white transition-colors cursor-default"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -269,9 +319,7 @@ export default function App() {
           <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">
             04 / Contact
           </p>
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">
-            Let&apos;s Talk.
-          </h2>
+          <h2 className="text-5xl md:text-7xl font-bold mb-6">Let&apos;s Talk.</h2>
           <p className="text-gray-400 mb-10 max-w-md mx-auto">
             Open to developer and QA roles. Have a project in mind or just want
             to connect? My inbox is always open.
@@ -282,7 +330,7 @@ export default function App() {
           >
             {EMAIL}
           </a>
-          <div className="mt-16 flex justify-center gap-8 text-xs uppercase tracking-widest text-gray-500">
+          <div className="mt-16 flex flex-wrap justify-center gap-8 text-xs uppercase tracking-widest text-gray-500">
             <a
               href={GITHUB_URL}
               target="_blank"
@@ -291,10 +339,7 @@ export default function App() {
             >
               GitHub
             </a>
-            <a
-              href={`mailto:${EMAIL}`}
-              className="hover:text-white transition-colors"
-            >
+            <a href={`mailto:${EMAIL}`} className="hover:text-white transition-colors">
               Email
             </a>
             <span className="text-gray-600">Charlotte, NC</span>
