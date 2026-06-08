@@ -163,8 +163,8 @@ export default function App() {
             <h2 className="text-4xl font-bold mb-6">Driven to build and ship.</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               I'm a developer with a B.S. in Information Systems Technology from
-              Miami Dade College (2023, 3.52 GPA). My background spans QA
-              automation, full-stack fundamentals, and mobile development — with
+              Miami Dade College (2023). My background spans QA automation,
+              full-stack fundamentals, and mobile development — with
               hands-on coursework in CS50x (Python) and iPhone app development
               (Swift).
             </p>
