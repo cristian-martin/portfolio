@@ -1,40 +1,38 @@
 import { useState, useEffect } from "react";
 
-const NAV_LINKS = ["About", "Projects", "Skills", "Contact"];
+const NAV_LINKS = ["About", "Experience", "Skills", "Contact"];
 
-const PROJECTS = [
+const EXPERIENCE = [
   {
-    title: "E-Commerce Platform",
-    description:
-      "Full-stack shopping experience with real-time inventory and payment integration.",
-    tags: ["React", "Node.js", "PostgreSQL"],
+    role: "Dev QA & QC",
+    company: "Temperies Solution",
+    location: "Miami, FL · WeWork",
+    period: "2021 – 2022",
+    points: [
+      "Built automated test suites for multiple applications using TestCafe.",
+      "Performed API and front-end testing with TestCafe and SoapUI.",
+      "Authored test cases and ran both manual and automated testing.",
+    ],
+    tags: ["TestCafe", "SoapUI", "QA Automation"],
   },
   {
-    title: "Design System",
-    description:
-      "Component library used across 5 products, reducing UI inconsistencies by 80%.",
-    tags: ["TypeScript", "Storybook", "SCSS"],
-  },
-  {
-    title: "Analytics Dashboard",
-    description:
-      "Real-time data visualization platform processing 1M+ events daily.",
-    tags: ["Python", "D3.js", "Redis"],
+    role: "Technical Support",
+    company: "Kelly Services",
+    location: "Miami, FL",
+    period: "2020 – 2021",
+    points: [
+      "Provided first-level technical support on proprietary software and applications.",
+      "Diagnosed issues and escalated calls to the appropriate support tier.",
+      "Resolved customer queries and ran phone troubleshooting to meet company goals.",
+    ],
+    tags: ["Tech Support", "Troubleshooting", "CompTIA A+"],
   },
 ];
 
-const SKILLS = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Node.js",
-  "Python",
-  "PostgreSQL",
-  "AWS",
-  "Docker",
-  "Figma",
-  "GraphQL",
-];
+const SKILLS = ["Java", "JavaScript", "Python", "Swift"];
+
+const GITHUB_URL = "https://github.com/cristian-martin";
+const EMAIL = "cristian.msf23@gmail.com";
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,7 +54,7 @@ export default function App() {
       >
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="font-bold text-lg tracking-widest uppercase">
-            JD.
+            CM.
           </span>
           {/* Desktop links */}
           <ul className="hidden md:flex gap-8">
@@ -111,23 +109,23 @@ export default function App() {
       {/* Hero */}
       <section className="min-h-screen flex flex-col justify-center px-6 max-w-5xl mx-auto relative">
         <p className="text-xs uppercase tracking-widest mb-6 text-gray-500">
-          Available for work
+          Available for work · Charlotte, NC
         </p>
         <h1 className="text-6xl md:text-8xl font-bold leading-none tracking-tight mb-6">
-          John
+          Cristian
           <br />
-          Doe.
+          Martin.
         </h1>
         <p className="text-lg md:text-xl text-gray-600 max-w-lg mb-10">
-          Full-stack developer crafting minimal, purposeful digital experiences.
-          I turn complex problems into clean code.
+          Developer and Information Systems Technology graduate. I build clean,
+          reliable software — from QA automation to web and iOS apps.
         </p>
         <div className="flex gap-4 flex-wrap">
           <a
-            href="#projects"
+            href="#experience"
             className="px-6 py-3 bg-black text-white text-sm uppercase tracking-widest hover:bg-gray-800 transition-colors"
           >
-            View Work
+            View Experience
           </a>
           <a
             href="#contact"
@@ -150,51 +148,72 @@ export default function App() {
             <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">
               01 / About
             </p>
-            <h2 className="text-4xl font-bold mb-6">Simplicity is the key.</h2>
+            <h2 className="text-4xl font-bold mb-6">Driven to build and ship.</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              I'm a developer with 5+ years of experience building web
-              applications. I care deeply about performance, accessibility, and
-              clean architecture.
+              I'm a developer with a B.S. in Information Systems Technology from
+              Miami Dade College (2023, 3.52 GPA). My background spans QA
+              automation, full-stack fundamentals, and mobile development — with
+              hands-on coursework in CS50x (Python) and iPhone app development
+              (Swift).
             </p>
             <p className="text-gray-600 leading-relaxed">
-              When I'm not coding, I'm exploring minimal design, reading about
-              systems thinking, or hiking somewhere remote.
+              Self-motivated and detail-oriented, I care about writing clean code
+              and solving problems that create real value for the teams I work
+              with. Now based in Charlotte, NC.
             </p>
           </div>
           <div className="border border-black p-1">
             <div className="bg-gray-100 aspect-square flex items-center justify-center">
               <span className="text-8xl font-bold text-gray-200 select-none">
-                JD
+                CM
               </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects */}
-      <section id="projects" className="py-24 px-6 border-t border-black bg-black text-white">
+      {/* Experience */}
+      <section
+        id="experience"
+        className="py-24 px-6 border-t border-black bg-black text-white"
+      >
         <div className="max-w-5xl mx-auto">
           <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">
-            02 / Projects
+            02 / Experience
           </p>
-          <h2 className="text-4xl font-bold mb-12">Selected Work</h2>
-          <div className="grid md:grid-cols-3 gap-px bg-gray-700">
-            {PROJECTS.map((project, i) => (
+          <h2 className="text-4xl font-bold mb-12">Where I've Worked</h2>
+          <div className="grid md:grid-cols-2 gap-px bg-gray-700">
+            {EXPERIENCE.map((job, i) => (
               <div
                 key={i}
-                className="bg-black p-8 hover:bg-gray-900 transition-colors group cursor-pointer"
+                className="bg-black p-8 hover:bg-gray-900 transition-colors group"
               >
-                <span className="text-xs text-gray-500 uppercase tracking-widest">
-                  0{i + 1}
-                </span>
-                <h3 className="text-xl font-bold mt-4 mb-3 group-hover:underline underline-offset-4">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  {project.description}
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-xs text-gray-500 uppercase tracking-widest">
+                    0{i + 1}
+                  </span>
+                  <span className="text-xs text-gray-500 uppercase tracking-widest">
+                    {job.period}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold mt-4 mb-1">{job.role}</h3>
+                <p className="text-sm text-gray-400 mb-1">{job.company}</p>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-6">
+                  {job.location}
                 </p>
+                <ul className="space-y-2 mb-6">
+                  {job.points.map((point, j) => (
+                    <li
+                      key={j}
+                      className="text-gray-400 text-sm leading-relaxed flex gap-2"
+                    >
+                      <span className="text-gray-600">→</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
+                  {job.tags.map((tag) => (
                     <span
                       key={tag}
                       className="text-xs border border-gray-600 px-2 py-1 text-gray-400"
@@ -215,7 +234,7 @@ export default function App() {
           <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">
             03 / Skills
           </p>
-          <h2 className="text-4xl font-bold mb-12">Tech Stack</h2>
+          <h2 className="text-4xl font-bold mb-12">Core Languages</h2>
           <div className="flex flex-wrap gap-0">
             {SKILLS.map((skill, i) => (
               <div
@@ -242,25 +261,31 @@ export default function App() {
             Let&apos;s Talk.
           </h2>
           <p className="text-gray-400 mb-10 max-w-md mx-auto">
-            Have a project in mind or just want to connect? My inbox is always
-            open.
+            Open to developer and QA roles. Have a project in mind or just want
+            to connect? My inbox is always open.
           </p>
           <a
-            href="mailto:hello@johndoe.com"
+            href={`mailto:${EMAIL}`}
             className="inline-block px-8 py-4 border border-white text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
           >
-            hello@johndoe.com
+            {EMAIL}
           </a>
           <div className="mt-16 flex justify-center gap-8 text-xs uppercase tracking-widest text-gray-500">
-            <a href="#" className="hover:text-white transition-colors">
+            <a
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white transition-colors"
+            >
               GitHub
             </a>
-            <a href="#" className="hover:text-white transition-colors">
-              LinkedIn
+            <a
+              href={`mailto:${EMAIL}`}
+              className="hover:text-white transition-colors"
+            >
+              Email
             </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Twitter
-            </a>
+            <span className="text-gray-600">Charlotte, NC</span>
           </div>
         </div>
       </section>
@@ -268,7 +293,7 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-gray-800 bg-black text-gray-600 px-6 py-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-xs uppercase tracking-widest">
-          <span>© 2026 John Doe</span>
+          <span>© 2026 Cristian Martin</span>
           <span>Built with React + Tailwind</span>
         </div>
       </footer>
