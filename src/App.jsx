@@ -4,6 +4,18 @@ const NAV_LINKS = ["About", "Experience", "Skills", "Contact"];
 
 const EXPERIENCE = [
   {
+    role: "Swift Developer",
+    company: "City of Coral Gables · Internship",
+    location: "Coral Gables, FL · On-site",
+    period: "Jul 2024 – Sep 2024",
+    points: [
+      "Developed augmented reality experiences using ARKit within Xcode.",
+      "Handled 3D objects — focusing on positioning and rotation — to build realistic AR environments.",
+      "Used SwiftUI to enhance the user interface and interaction with AR elements.",
+    ],
+    tags: ["Swift", "ARKit", "SwiftUI", "Xcode"],
+  },
+  {
     role: "Dev QA & QC",
     company: "Temperies Solution",
     location: "Miami, FL · WeWork",
@@ -182,7 +194,7 @@ export default function App() {
             02 / Experience
           </p>
           <h2 className="text-4xl font-bold mb-12">Where I've Worked</h2>
-          <div className="grid md:grid-cols-2 gap-px bg-gray-700">
+          <div className="grid md:grid-cols-3 gap-px bg-gray-700">
             {EXPERIENCE.map((job, i) => (
               <div
                 key={i}
