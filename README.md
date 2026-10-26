@@ -1,16 +1,49 @@
-# React + Vite
+# cristian-martin · portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal site for Cristian Martin — software engineer in Charlotte, NC.
 
-Currently, two official plugins are available:
+Single-page React app: hero, selected projects (case-study format), experience, skills, about, contact.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
 
-## React Compiler
+- React 19 + TypeScript
+- Vite 7
+- Tailwind CSS 4
+- ESLint (typescript-eslint, react-hooks)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Develop
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev        # http://localhost:5173
+npm run lint
+npm run typecheck
+npm run build      # outputs to dist/
+npm run preview
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Editing content
+
+All copy lives in `src/data/` — no component changes needed for text updates:
+
+| File | Contents |
+|---|---|
+| `src/data/profile.ts` | Name, tagline, links (GitHub, LinkedIn, résumé), hero and about facts |
+| `src/data/projects.ts` | Project case studies — problem / what I built / outcome / stack |
+| `src/data/experience.ts` | Work history |
+| `src/data/skills.ts` | Skill groups |
+
+To add a project screenshot, drop an image into `public/projects/` and set `image: "/projects/<file>.png"` on the project.
+
+To show the LinkedIn and résumé links, fill in `linkedin` and `resume` in `profile.ts` (put `resume.pdf` in `public/`).
+
+## Structure
+
+```
+src/
+├── App.tsx               # section order
+├── main.tsx
+├── index.css             # Tailwind import
+├── components/           # one file per section + shared ui.tsx
+└── data/                 # all content
+```
