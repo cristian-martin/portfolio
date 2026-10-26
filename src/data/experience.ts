@@ -23,8 +23,8 @@ export const EXPERIENCE: Job[] = [
   {
     role: "QA Automation Engineer",
     company: "Temperies Solution",
-    location: "Miami, FL",
-    period: "2021 – 2022",
+    location: "Remote",
+    period: "Jan 2019 – Feb 2020",
     points: [
       "Built and maintained automated end-to-end test suites for multiple client applications with TestCafe.",
       "Covered REST APIs and front-ends with TestCafe and SoapUI; authored test cases from requirements.",
@@ -33,10 +33,10 @@ export const EXPERIENCE: Job[] = [
     tags: ["TestCafe", "SoapUI", "REST APIs", "Test Automation"],
   },
   {
-    role: "Technical Support Specialist",
+    role: "IT Support Specialist",
     company: "Kelly Services",
-    location: "Miami, FL",
-    period: "2020 – 2021",
+    location: "Miami, FL · Remote",
+    period: "Feb 2018 – Jan 2019",
     points: [
       "First-line support for proprietary software; diagnosed issues and escalated to the right tier.",
       "Resolved customer problems over the phone against response-time targets.",

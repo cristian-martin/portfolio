@@ -10,7 +10,7 @@ export const PROFILE = {
   // Add your LinkedIn URL to show the link (e.g. "https://www.linkedin.com/in/your-handle")
   linkedin: "https://www.linkedin.com/in/cristian-flores-dev/",
   // Drop a resume.pdf into /public and set this to "/resume.pdf" to show the button
-  resume: "",
+  resume: "/resume.pdf",
 } as const;
 
 export const NAV_LINKS = ["Projects", "Experience", "Skills", "About", "Contact"] as const;
@@ -23,7 +23,7 @@ export const HERO_SPECS: [string, string][] = [
 ];
 
 export const ABOUT_SPECS: [string, string][] = [
-  ["Education", "B.S. Information Systems Technology — Miami Dade College (2023)"],
+  ["Education", "B.S. Information Systems Technology — Miami Dade College (Dec 2025)"],
   ["Coursework", "CS50x (Python) · iPhone App Dev (Swift) · CompTIA A+"],
   ["Languages", "English (Advanced) · Spanish (Native)"],
   ["Interests", "Color science · AR/XR · Agentic AI · Fintech"],
